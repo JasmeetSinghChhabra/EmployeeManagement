@@ -7,14 +7,16 @@ import CoursesPage from "./CoursesPage";
 function App() {
   function getPage() {
     const route = window.location.pathname;
-    if (route === "/about") return <AboutPage />;
     if (route === "/courses") return <CoursesPage />;
+    if (route === "/about") return <AboutPage />;
     return <HomePage />;
   }
-  return <div className="contianer-fluid">
-    <Header />
-    {  getPage() }
-  </div>;
+  return (
+    <div className="container-fluid">
+      <Header />
+      {getPage()}
+    </div>
+  );
 }
 
 export default App;
